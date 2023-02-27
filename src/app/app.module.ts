@@ -9,6 +9,7 @@ import { UserComponent } from './components/user/user.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UpdateuserComponent } from './components/user/updateuser/updateuser.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UpdateuserComponent } from './components/user/updateuser/updateuser.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
