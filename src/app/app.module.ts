@@ -9,7 +9,7 @@ import { UserComponent } from './components/user/user.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UpdateuserComponent } from './components/user/updateuser/updateuser.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { C404Component } from './components/c404/c404.component';
 import { UserviewComponent } from './components/userview/userview.component';
 
@@ -28,7 +28,8 @@ import { UserviewComponent } from './components/userview/userview.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
