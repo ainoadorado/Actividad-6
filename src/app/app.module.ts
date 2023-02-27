@@ -10,6 +10,7 @@ import { NewuserComponent } from './components/newuser/newuser.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UpdateuserComponent } from './components/user/updateuser/updateuser.component';
 import { FormsModule } from '@angular/forms';
+import { C404Component } from './components/c404/c404.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     UserComponent,
     NewuserComponent,
     FooterComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    C404Component
   ],
   imports: [
     BrowserModule,
