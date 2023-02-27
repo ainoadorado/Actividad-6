@@ -34,7 +34,7 @@ export const USERS: User[] = [
         image: 'https://i.pravatar.cc/400?img=4',
     },
     {
-        id: 1,
+        id: 5,
         first_name: 'Juan Antonio',
         last_name: 'Pérez Fernández',
         username: 'Juan23',
@@ -42,7 +42,7 @@ export const USERS: User[] = [
         image: 'https://i.pravatar.cc/400?img=68',
     },
     {
-        id: 2,
+        id: 6,
         first_name: 'Ainoa',
         last_name: 'Dorado Iglesias',
         username: 'Ainoa26',
@@ -50,7 +50,7 @@ export const USERS: User[] = [
         image: 'https://i.pravatar.cc/400?img=32',
     },
     {
-        id: 3,
+        id: 7,
         first_name: 'Mauro',
         last_name: 'Álvarez González',
         username: 'mauro9',
@@ -58,7 +58,7 @@ export const USERS: User[] = [
         image: 'https://i.pravatar.cc/400?img=12',
     },
     {
-        id: 4,
+        id: 8,
         first_name: 'Gael',
         last_name: 'Fernández Dorribo',
         username: 'Gael11',
