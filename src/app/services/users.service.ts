@@ -14,4 +14,8 @@ export class UsersService {
   getAll(): User[] {
     return this.arrUsers;
   }
+
+  getById(pId: number): User | any {
+    return this.arrUsers.find(user => user.id == pId);
+  }
 }
