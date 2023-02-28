@@ -3,8 +3,8 @@
     <form novalidate [formGroup]="updateUser" (ngSubmit)="getDataForm()">
         <div class="my-2">
             <label class="form-label" for="first_name">Nombre del usuario (*)</label>
-            <input class="form-control" id="first_name" type="text" formControlName="first_name">
-            <p class="error" *ngIf="checkControl('first_name', 'required')">El campo es requerido</p>
+            <input class="form-control" id="first_name" formControlName="first_name">
+            <p class=" error" *ngIf="checkControl('first_name', 'required')">El campo es requerido</p>
             <p class="error" *ngIf="checkControl('first_name', 'minlength')">El nombre no puede ser mas corto de tres
                 letras
             </p>
