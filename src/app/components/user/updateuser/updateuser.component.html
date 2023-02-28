@@ -1,1 +1,39 @@
-<p>updateuser works!</p>
+<section class="container" style="margin-top: 3rem;">
+    <h1 class="mb-4">ACTUALIZAR USUARIO</h1>
+    <form novalidate [formGroup]="updateUser" (ngSubmit)="getDataForm()">
+        <div class="my-2">
+            <label class="form-label" for="first_name">Nombre del usuario (*)</label>
+            <input class="form-control" id="first_name" type="text" formControlName="first_name">
+            <p class="error" *ngIf="checkControl('first_name', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('first_name', 'minlength')">El nombre no puede ser mas corto de tres
+                letras
+            </p>
+        </div>
+
+        <div class="my-2">
+            <label class="form-label" for="last_name">Apellidos del usuario (*)</label>
+            <input class="form-control" id="last_name" type="text" formControlName="last_name">
+            <p class="error" *ngIf="checkControl('last_name', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('last_name', 'minlength')">El nombre no puede ser mas corto de tres
+                letras
+            </p>
+        </div>
+
+        <div class="my-2">
+            <label class="form-label" for="email">Email del usuario (*)</label>
+            <input class="form-control" id="email" type="mail" formControlName="email">
+            <p class="error" *ngIf="checkControl('email', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('email', 'pattern')">EL email debe ser valido</p>
+        </div>
+
+        <div class="my-2">
+            <label class="form-label" for="image">Imagen del usuario (*)</label>
+            <input class="form-control" id="image" type="text" formControlName="image">
+            <p class="error" *ngIf="checkControl('image', 'required')">El campo es requerido</p>
+            <p class="error" *ngIf="checkControl('image', 'pattern')">El texto introducido no corresponde con una URL
+            </p>
+        </div>
+
+        <input type="submit" value="Actualizar" class="btn btn-danger mt-4" [disabled]="!updateUser.valid">
+    </form>
+</section>
