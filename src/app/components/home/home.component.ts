@@ -9,12 +9,14 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class HomeComponent implements OnInit {
 
+  objUsers: any = {};
   arrUsers: User[] = [];
-
   constructor(private usersService: UsersService) { }
 
-  ngOnInit(): void {
-    this.arrUsers = this.usersService.getAll()
+  async ngOnInit() {
+    this.objUsers = await this.usersService.getAll()
+    this.arrUsers = this.usersService.getArr(this.objUsers)
   }
+
 
 }

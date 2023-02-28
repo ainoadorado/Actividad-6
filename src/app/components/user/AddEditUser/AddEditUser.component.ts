@@ -10,7 +10,11 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./AddEditUser.component.css']
 })
 export class AddEditUserComponent implements OnInit {
-  @Input() myUser: User | any;
+
+  myUser: User | any;
+  objUsers: any = {};
+  arrUsers: User[] = [];
+
   AddEditUser: FormGroup;
   title: string;
   buttonName: string;
@@ -43,10 +47,13 @@ export class AddEditUserComponent implements OnInit {
     this.buttonName = "Guardar"
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.objUsers = await this.usersService.getAll()
+    this.arrUsers = this.usersService.getArr(this.objUsers)
+
     this.activateRoute.params.subscribe((params: any) => {
       let id = params.url;
-      this.myUser = this.usersService.getById(id);
+      this.myUser = this.usersService.getById(this.arrUsers, id);
 
       if (id) {
         this.title = "ACTUALIZAR USUARIO"

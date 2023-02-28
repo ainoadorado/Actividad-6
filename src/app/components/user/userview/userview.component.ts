@@ -9,17 +9,24 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./userview.component.css']
 })
 export class UserviewComponent implements OnInit {
-  @Input() myUser: User | any;
+
+  myUser: User | any;
+  objUsers: any = {};
+  arrUsers: User[] = [];
 
   constructor(
     private activateRoute: ActivatedRoute,
     private usersService: UsersService) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.objUsers = await this.usersService.getAll()
+    this.arrUsers = this.usersService.getArr(this.objUsers);
+
     this.activateRoute.params.subscribe((params: any) => {
       let id = params.url;
-      this.myUser = this.usersService.getById(id);
+      console.log(id)
+      this.myUser = this.usersService.getById(this.arrUsers, id);
     })
   }
 
