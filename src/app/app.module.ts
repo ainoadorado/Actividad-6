@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
-import { NewuserComponent } from './components/newuser/newuser.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { UpdateuserComponent } from './components/user/updateuser/updateuser.component';
+import { AddEditUserComponent } from './components/user/AddEditUser/AddEditUser.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { C404Component } from './components/c404/c404.component';
 import { UserviewComponent } from './components/user/userview/userview.component';
@@ -19,9 +18,8 @@ import { UserviewComponent } from './components/user/userview/userview.component
     HeaderComponent,
     HomeComponent,
     UserComponent,
-    NewuserComponent,
     FooterComponent,
-    UpdateuserComponent,
+    AddEditUserComponent,
     C404Component,
     UserviewComponent
   ],
