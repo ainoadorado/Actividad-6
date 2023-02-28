@@ -14,6 +14,7 @@ export class AddEditUserComponent implements OnInit {
   myUser: User | any;
   objUsers: any = {};
   arrUsers: User[] = [];
+  id: string = "";
 
   AddEditUser: FormGroup;
   title: string;
@@ -45,24 +46,38 @@ export class AddEditUserComponent implements OnInit {
 
     this.title = "NUEVO USUARIO"
     this.buttonName = "Guardar"
+
+    this.activateRoute.params.subscribe((params: any) => {
+      this.id = params.url;
+    })
+
   }
 
   async ngOnInit() {
-    this.objUsers = await this.usersService.getAll()
-    this.arrUsers = this.usersService.getArr(this.objUsers)
-
-    this.activateRoute.params.subscribe((params: any) => {
-      let id = params.url;
-      this.myUser = this.usersService.getById(this.arrUsers, id);
-
-      if (id) {
-        this.title = "ACTUALIZAR USUARIO"
-        this.buttonName = "Actualizar"
-        this.AddEditUser.patchValue({ first_name: this.myUser.first_name, last_name: this.myUser.last_name, email: this.myUser.email, image: this.myUser.image });
-      }
-    })
+    this.myUser = await this.usersService.getById(this.id)
+    if (this.id) {
+      this.title = "ACTUALIZAR USUARIO"
+      this.buttonName = "Actualizar"
+      this.AddEditUser = new FormGroup({
+        first_name: new FormControl(this.myUser.first_name, [
+          Validators.required,
+          Validators.minLength(3)
+        ]),
+        last_name: new FormControl(this.myUser.last_name, [
+          Validators.required,
+          Validators.minLength(3)
+        ]),
+        email: new FormControl(this.myUser.email, [
+          Validators.required,
+          Validators.pattern(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)
+        ]),
+        image: new FormControl(this.myUser.image, [
+          Validators.required,
+          Validators.pattern(/^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/)
+        ])
+      })
+    }
   }
-
 
 
   getDataForm() {

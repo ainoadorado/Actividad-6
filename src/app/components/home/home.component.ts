@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -11,12 +12,14 @@ export class HomeComponent implements OnInit {
 
   objUsers: any = {};
   arrUsers: User[] = [];
+  currentPage = 0;
+
   constructor(private usersService: UsersService) { }
 
   async ngOnInit() {
     this.objUsers = await this.usersService.getAll()
     this.arrUsers = this.usersService.getArr(this.objUsers)
-  }
 
+  }
 
 }

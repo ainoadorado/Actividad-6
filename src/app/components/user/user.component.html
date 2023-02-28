@@ -7,7 +7,7 @@
 
         <div style="display: flex; gap: 1.5rem; justify-content: center;">
 
-            <a [routerLink]="['/user', myUser.id]"
+            <a [routerLink]="['/user', myUser._id]"
                 style="display: flex; flex-direction: column; gap:0.5rem; text-align: center; text-decoration: none; color: black;">
 
                 <div>
@@ -22,7 +22,7 @@
 
             </a>
 
-            <a [routerLink]="['/updateuser', myUser.id]"
+            <a [routerLink]="['/updateuser', myUser._id]"
                 style="display: flex; flex-direction: column; gap:0.5rem;text-align: center; text-decoration: none;color: black">
 
                 <div>

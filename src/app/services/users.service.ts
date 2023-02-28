@@ -12,12 +12,17 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
 
+
   getAll(): Promise<User[]> {
     return lastValueFrom(this.httpClient.get<User[]>(this.baseUrl));
   }
 
-  getById(pArr: User[], pId: number): User | any {
-    return pArr.find(user => user.id == pId);
+  getByPage(currentPage: number): Promise<User[]> {
+    return lastValueFrom(this.httpClient.get<User[]>((this.baseUrl) + `?page=${currentPage}`));
+  }
+
+  getById(pId: string): Promise<User> {
+    return lastValueFrom(this.httpClient.get<User>((this.baseUrl) + `/${pId}`));
   }
 
   getArr(pObj: any): User[] {

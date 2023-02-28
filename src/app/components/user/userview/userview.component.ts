@@ -13,21 +13,19 @@ export class UserviewComponent implements OnInit {
   myUser: User | any;
   objUsers: any = {};
   arrUsers: User[] = [];
+  id: string = "";
 
   constructor(
     private activateRoute: ActivatedRoute,
     private usersService: UsersService) {
+
+    this.activateRoute.params.subscribe((params: any) => {
+      this.id = params.url;
+    })
   }
 
   async ngOnInit() {
-    this.objUsers = await this.usersService.getAll()
-    this.arrUsers = this.usersService.getArr(this.objUsers);
-
-    this.activateRoute.params.subscribe((params: any) => {
-      let id = params.url;
-      console.log(id)
-      this.myUser = this.usersService.getById(this.arrUsers, id);
-    })
+    this.myUser = await this.usersService.getById(this.id)
   }
 
 }
