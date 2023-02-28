@@ -13,19 +13,12 @@ export class UsersService {
   constructor(private httpClient: HttpClient) { }
 
 
-  getAll(): Promise<User[]> {
-    return lastValueFrom(this.httpClient.get<User[]>(this.baseUrl));
+  getAll(pPage: number = 1): Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>((this.baseUrl) + `?page=${pPage}`));
   }
 
-  getByPage(currentPage: number): Promise<User[]> {
-    return lastValueFrom(this.httpClient.get<User[]>((this.baseUrl) + `?page=${currentPage}`));
+  getById(pId: string): Promise<User[]> {
+    return lastValueFrom(this.httpClient.get<User[]>((this.baseUrl) + `/${pId}`));
   }
 
-  getById(pId: string): Promise<User> {
-    return lastValueFrom(this.httpClient.get<User>((this.baseUrl) + `/${pId}`));
-  }
-
-  getArr(pObj: any): User[] {
-    return pObj.results
-  }
 }

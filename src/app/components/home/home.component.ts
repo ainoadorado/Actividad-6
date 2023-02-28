@@ -17,9 +17,8 @@ export class HomeComponent implements OnInit {
   constructor(private usersService: UsersService) { }
 
   async ngOnInit() {
-    this.objUsers = await this.usersService.getAll()
-    this.arrUsers = this.usersService.getArr(this.objUsers)
-
+    let response = await this.usersService.getAll()
+    this.arrUsers = response.results
   }
 
 }
