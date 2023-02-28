@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'newuser', component: NewuserComponent },
-  { path: 'updateuser', component: UpdateuserComponent },
   { path: 'user/:url', component: UserviewComponent },
+  { path: 'updateuser/:url', component: UpdateuserComponent },
   { path: '**', component: C404Component }
 
 ];
