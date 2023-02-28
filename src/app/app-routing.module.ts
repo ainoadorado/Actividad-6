@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NewuserComponent } from './components/newuser/newuser.component';
 import { UpdateuserComponent } from './components/user/updateuser/updateuser.component';
 import { UserComponent } from './components/user/user.component';
-import { UserviewComponent } from './components/userview/userview.component';
+import { UserviewComponent } from './components/user/userview/userview.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
