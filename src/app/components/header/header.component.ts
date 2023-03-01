@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  isActive: boolean = true;
+
+  activeButton() {
+    this.isActive = !this.isActive;
+  }
+
 }
