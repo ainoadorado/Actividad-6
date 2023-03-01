@@ -3,9 +3,8 @@
         style="padding: 0; margin: 0; display: flex; justify-content: center;">
         <app-user [myUser]="user"> </app-user>
     </article>
-    <div style="display: flex; justify-content: center; margin-bottom: 5rem;">
-        <a href=""
-            style="display: flex; justify-content: center; text-decoration:none; color:black; margin-right: 5rem;">
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 5rem;">
+        <div style="display: flex; justify-content: center; margin-right: 5rem; cursor: pointer;" (click)="previous()">
             <p style="font-size: 1.5rem"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     fill="currentColor" class="bi
                 bi-chevron-double-left" viewBox="0 0 16 16">
@@ -14,16 +13,25 @@
                     <path fill-rule="evenodd"
                         d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                 </svg>Anterior</p>
-        </a>
+        </div>
 
-        <a href="" style="display: flex; justify-content: center; text-decoration:none; color:black; margin-left: 5rem">
-            <p style="font-size: 1.5rem">Siguiente<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        <div style="display: flex;">
+            <div *ngFor=" let p of totalPages; let i = index">
+                <a class="rounded-circle bg-dark m-2 py-2 px-4"
+                    style="cursor:pointer; font-size: 1.5rem; text-decoration: none;" (click)="setPage(i+1)"
+                    [ngClass]="{'text-white' : (i + 1) === page , 'text-secondary' : (i + 1) !== page}"> {{ i +
+                    1}}</a>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-left: 5rem; cursor: pointer;" (click)="next()">
+            <p style="font-size: 1.5rem;">Siguiente<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
                     <path fill-rule="evenodd"
                         d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                 </svg></p>
-        </a>
+        </div>
     </div>
 </div>
