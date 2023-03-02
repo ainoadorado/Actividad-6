@@ -90,7 +90,7 @@ export class AddEditUserComponent implements OnInit {
         let response = await this.usersService.createUser(user);
         if (response) {
           Swal.fire({
-            title: 'Usuario creado correctamente',
+            title: '¡Usuario creado correctamente!',
             text: `Se ha creado el usuario ${response.first_name} ${response.last_name} con id ${response.id}`,
             icon: 'success',
           })
@@ -110,7 +110,7 @@ export class AddEditUserComponent implements OnInit {
         let response = await this.usersService.updateUser(user, id);
         if (response) {
           Swal.fire({
-            title: 'Usuario actualizado correctamente',
+            title: '¡Usuario actualizado correctamente!',
             text: `Se ha actualizado el usuario ${response.first_name} ${response.last_name}`,
             icon: 'success',
           })

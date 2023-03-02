@@ -18,7 +18,6 @@ export class UserComponent implements OnInit {
   }
 
   constructor(
-    private activateRoute: ActivatedRoute,
     private usersService: UsersService) {
   }
 
@@ -38,7 +37,7 @@ export class UserComponent implements OnInit {
           let response = await this.usersService.deleteUser(user);
           if (response) {
             Swal.fire(
-              'Eliminado!',
+              '¡Eliminado!',
               `El usuario ${response.first_name} ${response.last_name} se ha borrado correctamente`,
               'success'
             )
