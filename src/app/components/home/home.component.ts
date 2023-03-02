@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -51,5 +50,6 @@ export class HomeComponent implements OnInit {
     this.page = pPage;
     this.paintUsers();
   }
+
 
 } 

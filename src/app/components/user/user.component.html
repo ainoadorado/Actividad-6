@@ -1,5 +1,5 @@
 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 17rem; height: 30rem;padding: 1rem">
-    <img src={{myUser.image}} style="margin-bottom: 1rem;" class="rounded-circle mx-auto img-fluid h-30"
+    <img [src]="myUser.image" style="margin-bottom: 1rem;" class="rounded-circle mx-auto img-fluid h-30"
         alt="user-image">
     <div class="card-body" style="display: flex; flex-direction: column; gap: 2rem;">
         <p class="card-text" style="text-align: center; font-size: 1rem;"> {{myUser.first_name}} {{myUser.last_name}}
@@ -40,7 +40,7 @@
             </a>
 
             <a style="display: flex; flex-direction: column; gap: 0.5rem; text-align: center;font-size: 0.7rem"
-                type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                (click)="deleteUser()">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                         class="bi bi-trash" viewBox="0 0 16 16">
@@ -51,24 +51,6 @@
                     </svg>
                 </div>
                 <p>Eliminar</p>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">¿Desea borrar el usuario
-                                    seleccionado?</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-danger">Aceptar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </a>
 
         </div>

@@ -4,10 +4,8 @@
             <img src="https://images.vexels.com/media/users/3/224282/isolated/preview/c09e11bba1766e8412ce116e1afb4a58-logo-de-lineas-abstractas-violetas.png"
                 alt="logo" style="margin-left: 3rem; width: 3rem;">
             <div class="navbar-nav" style="margin-right: 3rem;">
-                <a class="nav-item nav-link" [routerLink]="['/home']" [ngClass]="{'active': isActive}"
-                    (click)=activeButton()>Home</a>
-                <a class="nav-item nav-link" [routerLink]="['/newuser']" [ngClass]="{'active': !isActive}"
-                    (click)=activeButton()>Nuevo
+                <a class="nav-item nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+                <a class="nav-item nav-link" [routerLink]="['/newuser']" routerLinkActive="active">Nuevo
                     usuario</a>
             </div>
         </nav>
