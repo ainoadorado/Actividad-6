@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
@@ -16,12 +15,13 @@ export class UserviewComponent implements OnInit {
   objUsers: any = {};
   arrUsers: User[] = [];
   id: string = "";
+  p: number = 1;
+
 
   constructor(
     private activateRoute: ActivatedRoute,
     private usersService: UsersService,
     private router: Router,
-    private location: Location
   ) {
   }
 
@@ -32,8 +32,8 @@ export class UserviewComponent implements OnInit {
     })
   }
 
-  goBack(): void {
-    this.location.back();
+  goBack(page: any) {
+    console.log(page)
   }
 
   deleteUser() {

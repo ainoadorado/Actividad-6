@@ -11,6 +11,7 @@ import { AddEditUserComponent } from './components/user/AddEditUser/AddEditUser.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { C404Component } from './components/c404/c404.component';
 import { UserviewComponent } from './components/user/userview/userview.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UserviewComponent } from './components/user/userview/userview.component
     FooterComponent,
     AddEditUserComponent,
     C404Component,
-    UserviewComponent
+    UserviewComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

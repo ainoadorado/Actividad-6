@@ -3,28 +3,7 @@
         style="padding: 0; margin: 0; display: flex; justify-content: center;">
         <app-user [myUser]="user"> </app-user>
     </article>
-    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 5rem;">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link text-black" style="cursor : pointer" (click)="previous()">
-                        <span aria-hidden=" true">&laquo;</span>
-                        <span class="sr-only m-1">Anterior</span>
-                    </a>
-                </li>
-                <li *ngFor=" let p of totalPages; let i = index" class="page-item">
-                    <a class="page-link text-black" style="cursor : pointer" (click)="setPage(i+1)"
-                        [ngClass]="{'bg-secondary text-white' : (i + 1) === page , 'text-secondary' : (i + 1) !== page}">
-                        {{ i + 1}}</a>
-                </li>
-
-                <li class="page-item">
-                    <a class="page-link text-black" style="cursor : pointer" (click)="next()">
-                        <span class="sr-only m-1">Siguiente</span>
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div>
+        <app-pagination (pageEmitter)="goToPage($event)"></app-pagination>
     </div>
 </div>

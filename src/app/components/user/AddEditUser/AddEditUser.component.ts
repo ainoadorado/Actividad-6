@@ -103,7 +103,7 @@ export class AddEditUserComponent implements OnInit {
     } else {
       try {
         let user = {
-          first_name: this.AddEditUser.value.first_name,
+          firstname: this.AddEditUser.value.first_name,
           username: this.AddEditUser.value.username
         };
         let id = this.myUser._id;
