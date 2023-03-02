@@ -94,6 +94,7 @@ export class AddEditUserComponent implements OnInit {
             text: `Se ha creado el usuario ${response.first_name} ${response.last_name} con id ${response.id}`,
             icon: 'success',
           })
+          this.router.navigate(['/home']);
         }
       }
       catch (err) {
@@ -107,13 +108,13 @@ export class AddEditUserComponent implements OnInit {
         };
         let id = this.myUser._id;
         let response = await this.usersService.updateUser(user, id);
-        console.log(response.first_name)
         if (response) {
           Swal.fire({
             title: 'Usuario actualizado correctamente',
             text: `Se ha actualizado el usuario ${response.first_name} ${response.last_name}`,
             icon: 'success',
           })
+          this.router.navigate(['/home']);
         }
       }
       catch (err) {

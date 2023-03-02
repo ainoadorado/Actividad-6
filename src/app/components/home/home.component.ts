@@ -50,6 +50,4 @@ export class HomeComponent implements OnInit {
     this.page = pPage;
     this.paintUsers();
   }
-
-
 } 

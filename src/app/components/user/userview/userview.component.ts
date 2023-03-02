@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
@@ -19,7 +20,8 @@ export class UserviewComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private usersService: UsersService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {
   }
 
@@ -28,6 +30,10 @@ export class UserviewComponent implements OnInit {
       this.id = params.url;
       this.myUser = await this.usersService.getById(this.id)
     })
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   deleteUser() {
@@ -49,6 +55,7 @@ export class UserviewComponent implements OnInit {
               `El usuario ${response.first_name} ${response.last_name} se ha borrado correctamente`,
               'success'
             )
+            this.router.navigate(['/home']);
           }
         }
         catch (err) {

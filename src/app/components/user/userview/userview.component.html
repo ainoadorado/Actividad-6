@@ -16,7 +16,7 @@
             <button type="button" class="btn btn-secondary m-1" (click)="deleteUser()">Eliminar</button>
             <button type="button" class="btn btn-secondary m-1"
                 [routerLink]="['/updateuser', myUser?._id]">Actualizar</button>
-            <button type="button" class="btn btn-secondary m-1" [routerLink]="['/home']">Volver al
+            <button type="button" class="btn btn-secondary m-1" (click)="goBack()">Volver al
                 listado</button>
         </div>
     </div>
