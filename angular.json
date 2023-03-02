@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "lodash"
+              "sweetalert2"
            ],
             "outputPath": "dist/actividad-6",
             "index": "src/index.html",

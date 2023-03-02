@@ -32,10 +32,6 @@ export class UserviewComponent implements OnInit {
     })
   }
 
-  goBack(page: any) {
-    console.log(page)
-  }
-
   deleteUser() {
     Swal.fire({
       title: '¿Desea eliminar este usuario?',

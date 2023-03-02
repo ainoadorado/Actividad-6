@@ -4,6 +4,33 @@
         <app-user [myUser]="user"> </app-user>
     </article>
     <div>
-        <app-pagination (pageEmitter)="goToPage($event)"></app-pagination>
+        <app-pagination (pageEmitter)="turnPage($event)"></app-pagination>
     </div>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 5rem;">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" style="cursor: pointer;" (click)="turnPage(currentpage - 1)"
+                    [ngClass]="{'text-secondary pe-none user-select-none' : currentpage === First , 'text-black pe-auto user-select-all' : currentpage !== First}">
+                    <span aria-hidden=" true">&laquo;</span>
+                    <span class="sr-only m-1">Anterior</span>
+                </a>
+            </li>
+            <li *ngFor=" let p of totalPages; let i = index" class="page-item">
+                <a class="page-link text-black" style="cursor : pointer" (click)="setPage(i+1)"
+                    [ngClass]="{'bg-secondary text-white' : (i + 1) === currentpage}">
+                    {{ i + 1}}
+                </a>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link" style="cursor: pointer;" (click)="turnPage(currentpage + 1)"
+                    [ngClass]="{'text-secondary pe-none user-select-none' : currentpage === Last , 'text-black pe-auto user-select-all' : currentpage !== Last}">
+                    <span class="sr-only m-1">Siguiente</span>
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>
